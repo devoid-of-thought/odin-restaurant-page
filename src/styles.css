@@ -79,6 +79,7 @@ h6 {
   font-size: 16px;
   --far-background-color: #cccccc;
   --close-background-color: #eeeeee;
+  --text-on-primary-color: #eeeeee;
   --primary-color: #020100;
   --secondary-color: #801a86;
   --accent-color: #e768f3;
@@ -89,10 +90,52 @@ body {
 }
 header {
   background-color: var(--primary-color);
-  padding: 1rem;
+  padding: 0 2rem 1rem 2rem;
 }
 nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 5rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: "home menu contact logo logo about blog careers";
+  gap: 2rem;
+}
+nav .header-link {
+  color: var(--text-on-primary-color);
+  font-size: 2rem;
+  text-decoration: none;
+  align-self: end;
+}
+nav .header-link:nth-of-type(1),
+nav .header-link:nth-of-type(2),
+nav .header-link:nth-of-type(3){
+  justify-self: start;
+}
+nav .header-link:nth-of-type(4),
+nav .header-link:nth-of-type(5),
+nav .header-link:nth-of-type(6){
+  justify-self: end;
+}
+nav .header-link:nth-of-type(1) {
+  grid-area: home;
+  }
+nav .header-link:nth-of-type(2) {
+  grid-area: menu;
+  }
+nav .header-link:nth-of-type(3) {
+  grid-area: contact;
+  }
+nav .header-logo {
+  grid-area: logo;
+  align-self: baseline;
+  justify-self: center;
+  font-size: 3rem;
+  color: var(--text-on-primary-color)
+}
+nav .header-link:nth-of-type(4){
+  grid-area: about;
+}
+nav .header-link:nth-of-type(5){
+  grid-area: blog;
+}
+nav .header-link:nth-of-type(6){
+  grid-area: careers;
 }
