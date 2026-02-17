@@ -74,3 +74,25 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+:root {
+  font-size: 16px;
+  --far-background-color: #cccccc;
+  --close-background-color: #eeeeee;
+  --primary-color: #020100;
+  --secondary-color: #801a86;
+  --accent-color: #e768f3;
+}
+body {
+  background-color: var(--far-background-color);
+  font-family: 'Space Grotesk', sans-serif;
+}
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5rem;
+}
