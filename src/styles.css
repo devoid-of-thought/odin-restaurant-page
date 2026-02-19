@@ -91,7 +91,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   display: grid;
-  grid-template-rows: minmax(auto-fit,max-content);
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
 header {
@@ -252,24 +252,10 @@ header{
   align-self: center;
   margin: 3rem;
 }
-.menue .menue-item{
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  width: 100%;
-  padding: 1rem;
-  border-bottom: #020100 solid 2px;
-}
-.menue .menue-item:last-child{
-  border-bottom: none;
-}
-.menue .menu-item .name-and-details{
+
+.name-and-details{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: start;
-  gap: 0.5rem;
-  margin: 1rem;
 }
 .name-and-details .details{
   grid-column:2/3;
@@ -287,9 +273,7 @@ header{
   border-bottom: #020100 solid 1px;
 }
 
-.menue .menu-item:last-child p{
-  border-bottom: none;
-}
+
 .contact-card{
   display: flex;
   flex-direction: column;

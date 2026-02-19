@@ -3,9 +3,10 @@ import loadHome from "./main_page";
 import loadMenu from "./menu";
 import loadContact from "./contact";
 
+const content = document.getElementById("content");
+
 loadHome();
 const wipeContent = () => {
-    const content = document.getElementById("content");
     content.textContent = "";
 }
  
