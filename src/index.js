@@ -1,19 +1,39 @@
 import "./styles.css";
 import loadHome from "./main_page";
+import loadMenu from "./menu";
+import loadContact from "./contact";
 
 loadHome();
+const wipeContent = () => {
+    const content = document.getElementById("content");
+    content.textContent = "";
+}
  
-const homeButton = document.getElementById("home-button");
-homeButton.addEventListener("click", () => {
-  loadHome();
-});
+const navContainer = document.querySelector("nav");
 
-const menuButton = document.getElementById("menu-button");
-menuButton.addEventListener("click", () => {
-    loadMenu();
-});
+navContainer.addEventListener("click", (event) => {
+    if (event.target.classList.contains("header-link")) {
+        const clickedId = event.target.id;
+        console.log(clickedId);
+        
+        wipeContent();
 
-const contactButton = document.getElementById("contact-button");
-contactButton.addEventListener("click", () => {
-    loadContact();
+        switch(clickedId) {
+            case "home-button":
+                loadHome();
+                break;
+            case "menu-button":
+                loadMenu();
+                break;
+            case "delivery-button":
+                break;
+            case "about-us-button":
+                break;
+            case "our-cheese-button":
+                break;
+            case "contact-button":
+                loadContact();
+                break;
+        }
+    }
 });

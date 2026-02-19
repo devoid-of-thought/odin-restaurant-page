@@ -1,5 +1,5 @@
 
-import img1 from ". /images/ctrlaltdck-cheese-4072040_1280.jpg";
+import img1 from "./images/ctrlaltdck-cheese-4072040_1280.jpg";
 import img2 from "./images/jhenning-cheese-8437668_1280.jpg";
 import img3 from "./images/davidvives90-cheese-8274861_1280.jpg";
 
@@ -43,24 +43,24 @@ export default function loadHome() {
             image: img3,
         }
     ];  
-    for (let i = 0; i < 3; i++) {
+    for (const item of locationsData) {
         const location = document.createElement("div");
         location.classList.add("location");
 
         const imageContainer = document.createElement("div");
         imageContainer.classList.add("image-container");
         const image = document.createElement("img");
-        image.src = locationsData[i].image;
-        image.alt = `${locationsData[i].city} location`;
+        image.src = item.image;
+        image.alt = `${item.city} location`;
         imageContainer.appendChild(image);
         location.appendChild(imageContainer);
 
         const locationInfo = document.createElement("div");
         locationInfo.classList.add("text-container");
         const city = document.createElement("h2");
-        city.textContent = locationsData[i].city;
+        city.textContent = item.city;
         const address = document.createElement("p");
-        address.textContent = locationsData[i].address;
+        address.textContent = item.address;
         locationInfo.appendChild(city);
         locationInfo.appendChild(address);
         location.appendChild(locationInfo);

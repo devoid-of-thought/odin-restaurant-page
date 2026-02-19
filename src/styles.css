@@ -87,6 +87,12 @@ h6 {
 body {
   background-color: var(--far-background-color);
   font-family: 'Space Grotesk', sans-serif;
+    background-image: url('./images/dobby310-cheese-877866_1280.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-rows: minmax(auto-fit,max-content);
+  min-height: 100vh;
 }
 header {
   background-color: var(--primary-color);
@@ -94,8 +100,8 @@ header {
 }
 nav {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-areas: "home menu contact logo logo about blog careers";
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "home menu logo logo cheese contact";
   gap: 2rem;
 }
 nav .header-link {
@@ -103,6 +109,8 @@ nav .header-link {
   font-size: 2rem;
   text-decoration: none;
   align-self: end;
+  cursor: pointer;
+  -webkit-user-select: none;
 }
 nav .header-link:nth-of-type(1),
 nav .header-link:nth-of-type(2),
@@ -120,9 +128,7 @@ nav .header-link:nth-of-type(1) {
 nav .header-link:nth-of-type(2) {
   grid-area: menu;
   }
-nav .header-link:nth-of-type(3) {
-  grid-area: contact;
-  }
+
 nav .header-logo {
   grid-area: logo;
   align-self: baseline;
@@ -130,35 +136,30 @@ nav .header-logo {
   font-size: 3rem;
   color: var(--text-on-primary-color)
 }
+nav .header-link:nth-of-type(3){
+  grid-area: cheese;
+}
 nav .header-link:nth-of-type(4){
-  grid-area: about;
-}
-nav .header-link:nth-of-type(5){
-  grid-area: blog;
-}
-nav .header-link:nth-of-type(6){
-  grid-area: careers;
+  grid-area: contact;
 }
 
-body {
-  background-image: url('./images/dobby310-cheese-877866_1280.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  display: grid;
-  grid-template-rows: 1fr 10fr 1fr;
-  height: 200vh;
-}
 header{
   grid-row:1/2;
+  min-height: 10%;
+  max-height: max-content;
 }
 #content {
   grid-row: 2/3;
+  min-height: 60%;
+  max-height: max-content;
 }
 .footer {
   grid-row: 3/4;
+  min-height: 10%;
+  max-height: max-content;
+  align-self: end;
 }
 .main-content {
-grid-row: 2/3;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr 9fr;
@@ -232,11 +233,70 @@ grid-row: 2/3;
   gap: 0.5rem;
   margin-left: auto;
   margin-right: 2rem;
-  height: 100%;
   align-items: center;
 }
 .footer .footer-logo {
   align-self: end;
   font-size: 5rem;
   margin-left: 2rem;
+}
+
+.menu{
+  display:flex ;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 4rem;  
+  background-color: var(--close-background-color);
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  margin: 3rem;
+}
+.menue .menue-item{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: #020100 solid 2px;
+}
+.menue .menue-item:last-child{
+  border-bottom: none;
+}
+.menue .menu-item .name-and-details{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+.name-and-details .details{
+  grid-column:2/3;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: end;
+}   
+.name-and-details h2{
+  grid-column: 1/2;
+}
+.menu-item p{
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: #020100 solid 1px;
+}
+
+.menue .menu-item:last-child p{
+  border-bottom: none;
+}
+.contact-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--close-background-color);
+  width: 50%;
+  padding: 2rem;
+  margin: 3rem auto;
 }
