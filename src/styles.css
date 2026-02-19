@@ -139,3 +139,104 @@ nav .header-link:nth-of-type(5){
 nav .header-link:nth-of-type(6){
   grid-area: careers;
 }
+
+body {
+  background-image: url('./images/dobby310-cheese-877866_1280.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr;
+  height: 200vh;
+}
+header{
+  grid-row:1/2;
+}
+#content {
+  grid-row: 2/3;
+}
+.footer {
+  grid-row: 3/4;
+}
+.main-content {
+grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 9fr;
+  grid-template-areas: "welcome-message welcome-message" "left-content locations";
+}
+.welcome-message {
+  grid-area: welcome-message;
+  background-color: var(--close-background-color);
+  padding: 2rem;
+  margin: 2rem;
+  align-self: center;
+}
+.main-content .left-content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--close-background-color);
+  padding: 2rem;
+  margin: 2rem;
+  grid-area: left-content;
+  justify-self: start;
+  gap:3rem;
+}
+.left-content p{
+  font-size: 1.5rem;
+  padding: 10px;
+  border-bottom: #020100 solid 2px;
+}
+.left-content p:last-child{
+  border-bottom: none;
+}
+.main-content .locations {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--close-background-color);
+  padding: 2rem;
+  grid-area: locations;
+  justify-self: end;
+  margin: 2rem;
+  width:80%
+}
+.main-content .locations .location {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 2rem;
+  flex: 1;
+  gap: 1rem;
+  border-bottom: #020100 solid 2px;
+}
+.main-content .locations .location:last-child {
+  border-bottom: none;
+}
+.main-content .locations .location .image-container img 
+{
+  border: 5px solid white;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;}
+
+.footer {
+  grid-row: 3/4;
+  background-color: var(--primary-color);
+  color: var(--text-on-primary-color);
+  display: flex;
+  align-items: center;
+}
+.footer .important-footer-information {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: 2rem;
+  height: 100%;
+  align-items: center;
+}
+.footer .footer-logo {
+  align-self: end;
+  font-size: 5rem;
+  margin-left: 2rem;
+}
